@@ -1,5 +1,5 @@
 {
-  "name": "2tvenom/php-queue",
+  "name": "arturgr/php-queue",
   "type": "library",
   "description": "PHP Queue for task execution",
   "keywords": ["php", "queue"],
