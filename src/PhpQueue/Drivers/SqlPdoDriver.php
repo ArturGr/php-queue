@@ -95,7 +95,9 @@ class SqlPdoDriver implements IQueueDriver, IWebInterface
      */
     public function get_task(array $request)
     {
-        $request = array_filter($request);
+        $request = array_filter($request, function ($v, $k){
+            return $k == 'need_set_in_process' ? true : !empty($v);
+        }, ARRAY_FILTER_USE_BOTH);
 
         $this->connection->beginTransaction();
 
